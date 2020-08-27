@@ -1,0 +1,1 @@
+grant 权限(columns) on 数据库对象 to 用户 identified by '密码' with grant option;

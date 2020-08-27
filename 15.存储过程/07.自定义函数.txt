@@ -1,0 +1,43 @@
+存储过程语句
+
+1.if语句：
+
+if expression then
+  statements;
+end if;
+
+
+2.if..else语句
+if expression then
+  statements;
+else
+  else-statements;
+
+end if;
+
+
+3.case语句
+
+case case-expression
+  when when-expression_1 then commands
+  when when_expression_2 then commands
+  ...
+  else commands
+end case;
+
+4.循环
+
+a.while循环:
+while expression do
+  statements
+end while
+
+b.repeat循环:
+repeat
+  statements;
+until expression
+end repeat
+
+
+
+自定义函数：

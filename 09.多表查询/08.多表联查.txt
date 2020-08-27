@@ -1,0 +1,39 @@
+三张表：
+
+学生表：
+CREATE TABLE `t_student` (
+  `stuID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  PRIMARY KEY (`stuID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+课程表：
+CREATE TABLE `t_course` (
+  `cid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+
+成绩表：两个外键
+CREATE TABLE `t_score` (
+  `scoid` int(11) NOT NULL AUTO_INCREMENT,
+  `stuid` int(11) DEFAULT NULL,
+  `cid` int(11) DEFAULT NULL,
+  `score` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`scoid`),
+  KEY `sid_fk` (`stuid`),
+  KEY `cid_fk` (`cid`),
+  CONSTRAINT `cid_fk` FOREIGN KEY (`cid`) REFERENCES `t_course` (`cid`),
+  CONSTRAINT `sid_fk` FOREIGN KEY (`stuid`) REFERENCES `t_student` (`stuID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+
+
+多表联查：
+select stu.name,sco.score,c.name from t_student stu,t_score sco,t_course c
+where stu.stuID=sco.stuid AND sco.cid=c.cid;
+
+使用内连接的方式多表查询：
+select stu.name,sco.score,c.name from t_student stu inner join t_score sco on stu.stuID=sco.stuid inner join t_course c on sco.cid=c.cid;

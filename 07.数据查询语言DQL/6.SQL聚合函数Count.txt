@@ -1,0 +1,11 @@
+1.统计表中有多少条数据
+select count(*) from student;
+
+2.统计有age的个数，这里统计的是不为null的个数
+select count(age) from student;
+
+3.统计年龄大于18的人数
+SELECT count(*) from student where age >18;
+
+4.统计多个字段
+select count(age),count(name) from student;

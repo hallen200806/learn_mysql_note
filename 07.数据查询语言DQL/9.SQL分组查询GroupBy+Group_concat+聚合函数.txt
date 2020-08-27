@@ -1,0 +1,11 @@
+1.group by 分组
+SELECT * from student group by gender;	分为了男、女两组
+
+注意：当group by 单独使用是，只显示出每组的第一条记录，所以单独使用的意义不大。
+
+
+2.group by和group_by 组合使用：
+SELECT sex,group_concat(name) from student group by sex;	先分组，然后显示属于该组的人名
+
+3.分组结合聚合函数使用
+SELECT sex,group_concat(age),max(age) from student group by sex;		分组里年龄的最大值

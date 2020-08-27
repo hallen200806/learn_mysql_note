@@ -1,0 +1,18 @@
+
+create view emp_salary_view as (select * from emp where salary>2000);
+
+执行查询视图的SQL时(select * from emp_salary_view;)，具有以下两种区别：
+
+替代式：操作视图时，视图名直接被视图定义给替换掉
+
+替代式就是将select * from emp_salary_view;替换为select * from (select * from emp where salary>2000);
+
+
+具化式：
+具化式就是将select * from emp where salary>2000的结果存放在内存中的一个临时表中，
+然后执行select * from emp_salary_view;时就是从内存中查询
+
+
+替代式和具化式的区别：
+	替代式，将视图公式替换后，当成一个整体sql进行处理了	
+	具化式，先处理视图结果，后处理外面的查询需求

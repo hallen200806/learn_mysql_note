@@ -1,0 +1,15 @@
+limit的使用：
+select * from student limit 0,5;	参数：开始角标和条数，第一条数据是从0开始的
+
+
+分页思路：
+
+int curPage=1;	当前页
+int pageSize=3;	每页显示多少条
+
+curPage=1,第一页从0开始	（1-1）*3=0
+curPage=2，第二页从3开始	（2-1）*3=3
+curPage=3，第三页从6开始	（3-1）*3=6
+curPage=4，第四页从9开始	（4-1）*3=9
+
+select  * from student limit(curPage-1)*pageSize,pageSize;

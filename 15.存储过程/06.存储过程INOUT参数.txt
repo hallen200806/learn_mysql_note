@@ -1,0 +1,17 @@
+inout:即使输入也是输出
+
+delimiter $$
+create procedure test(iout num int,in inc int)
+
+begin
+
+set num=num+inc;
+
+end$$
+
+delimiter ;
+
+set @num1=20;
+call test(@num1,10);
+
+select @num1;		结果是30，因为num即使出入参数，也是输出结果

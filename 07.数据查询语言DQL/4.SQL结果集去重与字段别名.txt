@@ -1,0 +1,9 @@
+查询结果集去重：
+distinct关键字去重
+SELECT DISTINCT name from student;
+
+查询结果集进行运算：
+SELECT *,IFNULL(age,0)+IFNULL(score,0) from student;
+
+对查询结果集起别名：
+SELECT *,IFNULL(age,0)+IFNULL(score,0) as age_score from student;

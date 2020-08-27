@@ -1,0 +1,41 @@
+日期相关函数：
+
+curdate()	返回当前日期，只包含年月日
+
+curtime()	返回当前时间，只包含时分秒
+
+now()	年月日时分秒		select now();
+
+unix_timestamp()	返回当前日期的时间戳
+
+from_unixtime(unixtime)	讲一个时间戳转换为日期
+
+week(date)	返回当前是一年中的第几周
+
+year(date)	返回所给日期是哪一年
+
+hour(time)	返回当前时间的小时
+
+minute(time)	返回当前时间的分钟
+
+date_format(date,fmt)	按字符串格式化日期date值	select date_format(now(),'%Y-%M-%D');
+
+date_add(date,interval expr type)	结算日期间隔	select data_add(now(),interval 31 day);现在时间+31天后的时间
+
+datediff(date1,date2)	计算两个日期相差的天数	select datediff('2018-02-05'.now());两个日期相差的天数
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

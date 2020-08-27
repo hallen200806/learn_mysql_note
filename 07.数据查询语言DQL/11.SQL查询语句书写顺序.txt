@@ -1,0 +1,6 @@
+SQL≤È—Ø”Ôæ‰ È–¥À≥–Ú£∫
+select -- from --where -- group by --having -- order by -- limit
+
+
+÷¥––À≥–Ú£∫
+from --where -- group by --having --select --order by -- limit

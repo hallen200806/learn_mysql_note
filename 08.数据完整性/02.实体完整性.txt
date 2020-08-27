@@ -1,0 +1,59 @@
+1.什么是实体完整性
+表中的一阿红(一条记录)代表一个实体(entity)
+
+2.实体完整性的作用
+标识每一行数据不重复。行级约束
+
+3.约束类型：
+	主键约束:primary key
+	唯一约束：unique
+	自动增长列：auto increment
+
+
+主键约束：
+特点：每个表中要有一个主键；数据唯一，切不能为null
+创建方式：
+	a.create table 表名(字段1 数据类型 primary key，字段2 数据类型)
+	b.create table 表名(字段1 数据类型，字段2 数据类型，primary key(要设置主键的字段));
+	c.联合主键：两个字段数据同时相同时，才违反联合主键的约束(每一行的顺序和值都一样时，就会冲突)
+		create table 表名(字段1 数据类型，字段2 数据类型，primary key(主键1，主键2))
+	d.想创建表，然后修改表，添加主键
+		alter table student add constraint primary key(id)
+
+
+唯一约束：
+特点：指定列的数据不能重复，可以为空值
+格式：create table 表名(字段名1 数据类型，字段名2 数据类型 unique)；
+
+自增长列：
+特点：指定列的数据自动增长，计时数据删除，还是从删除的序号继续往下
+格式：create table 表名(字段名1 数据类型 primary key auto_increment,字段名2 数据类型 unique);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

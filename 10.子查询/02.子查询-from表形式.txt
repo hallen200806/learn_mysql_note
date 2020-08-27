@@ -1,0 +1,10 @@
+from后，把查询出的结果当作一个新表
+
+select ename,salary,deptno from emp where deptno = 30;
+
+select ename from 上面的结果；
+
+
+合并后的语句：
+select ename from(select ename,salary,deptno from emp where deptno = 30) s
+where s.salary >2000;

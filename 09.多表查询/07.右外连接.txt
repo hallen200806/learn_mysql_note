@@ -1,0 +1,7 @@
+左外连接：两表同时满足条件的数据查出来，如果左边表当中有不相同的数据，也把左边表当中的数据查出来
+
+select * from t_student stu right outer join t_score sco on stu.stuID=sco.stuid;
+
+
+右外连接：把右边表的数据全查出来，左边查出满足条件的
+左外连接：把左边表的数据全查出来，右边查出满足条件的

@@ -1,0 +1,9 @@
+查询所有列：
+select* from student;
+
+结果集：
+数据库执行DQL语句不会对数据进行改变，而是让数据库发送结果集给客户端，查询返回的结果集是一张虚拟表。
+
+查询指定的列：
+select 列名1，列名2 from 表名; 
+select name,age from student;

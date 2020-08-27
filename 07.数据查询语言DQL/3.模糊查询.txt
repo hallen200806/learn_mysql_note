@@ -1,0 +1,21 @@
+模糊查询：
+使用like关键字后跟通配符：
+通配符：_:任意一个字符
+            %：任意多个字符
+
+如：
+1.查询姓名由5个字母构成的学生信息，5个下划线
+select * FROM student WHERE `name` LIKE '_____';
+
+2.查询姓名由5个字母构成的学生信息，并且最后一个是字母为a，4个下划线+a
+select * FROM student WHERE `name` LIKE '____a';
+
+3.查询以m开头的学生信息
+select * from student where name like 'm%';
+
+4.查询第二个字母为r的学生信息
+SELECT * from student where name like '_r%';
+
+5.查询醒目中包含李的学生信息
+select * from student where `name` like '%李%';
+

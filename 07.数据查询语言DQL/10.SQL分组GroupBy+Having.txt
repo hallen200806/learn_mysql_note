@@ -1,0 +1,27 @@
+用来分组查询后指定一些条件来输出查询结果
+
+having作用和where一样，但是having只能用于group by
+
+
+
+having的使用：
+1.查询员工工资总和大于9000的部门名称
+select department,group_concat(salary),sum(salary) from employee group by department having sum(salary)>9000;
+
+
+
+having 和where的区别：
+
+1.having是在分组后对数据进行过滤
+   where是在分组前对数据进行过滤
+
+2.having后面可以使用分组函数(统计函数)
+   where后面不可以使用分组函数
+
+3.where是对分组前记录的条件，如果某条数据不满足where条件，那么不会参与分组
+   having是对分组后的数据进行约束
+
+
+例：
+查询工资大于2000的，工资总和大于6000的部门名称以及工资和
+select department,group_concat(salary),sum(salary) from employee where salary>2000 group by department having sum(salary)>6000;

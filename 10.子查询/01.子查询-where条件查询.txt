@@ -1,0 +1,11 @@
+1.什么是子查询
+	一个select语句中包含另一个完整的select语句，或两个以上的select语句，就是你子查询语句了。
+
+2.子查询出现的位置：
+	where后，把select查询出的结果当作另一个select的条件值
+	from后，把查询出的结果当作一个新表
+
+
+where形式：
+select ename,depyno from emp 
+where deptno=(select deptno from emp where ename="项羽");

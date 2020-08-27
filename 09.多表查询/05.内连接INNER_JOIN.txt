@@ -1,0 +1,18 @@
+内连接：
+
+	1.等值链接
+		两个表同时出现的id相等才显示
+		    select car.id,car.name,car.color from car inner join person on car.pid=person.id;省略inner也可以
+
+		与多表联查约束主键是一样，只是写法改变了
+
+		on后面只写主外键
+
+		如果还有条件直接在后面写where
+			select car.id,car.name,car.color from car inner join person on car.pid=person.id where id>2;
+
+		多表联查后面还有条件就直接写and
+
+	2.非等值链接
+		
+	3.自连接

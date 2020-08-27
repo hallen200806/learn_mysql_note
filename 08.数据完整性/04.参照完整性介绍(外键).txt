@@ -1,0 +1,24 @@
+什么是参照完整性：
+	是指表与表之间的一种对应关系，通常情况下可以通过设置两表之间的主键、外键关系，或者编写两表的触发器来实现，
+有对应参照完整性的两张表格，在对他们进行数据插入、更新、删除的过程中，系统都会被修改表格与另一张对应表格进行对照，
+从而阻止一些不正确的数据的操作
+
+
+数据库的主键和外键类型一定要一致
+两个表必须是InnoDB类型
+设置参照完整性后，外键当中的内值，必须得是主键当中的内容
+一个表设置当中的字段设置为主键，设置主键的为主表
+创建表时，设置外键，设置外键的为子表
+
+
+
+添加外键的方式：
+
+navicate添加方式：设计表---外键
+
+建表语句添加方式：
+	create table score(id int primary key auto_increment,name varchar(32),
+	constraint sc_st_fk foreign key(sid) references student(id))
+
+修改表结构的方式：
+	alter table score add constraint as_st_fk foreign key(sid) references student(id)

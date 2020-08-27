@@ -1,0 +1,58 @@
+字符串函数：
+
+concat(s1,s2,...,sn):
+		将传入的字符串连接成一个字符串
+		任何字符串与null进行连接结果都是null
+
+insert(str,x,y,instr)
+		将字符串str从x位置开始，y个字符串长的子串替换为指定的字符
+
+lower(str)	将字符串转换为大写
+
+upper(str)	将字符串转换为小写
+
+left(str,x)		返回字符串最左边的x个字符
+
+right(str,x)	返回字符串最右边的x个字符
+
+left(str,x)	和right(str,x)，如果第二个参数为null，那么不返回任何字符
+
+lpad(str,n,pad)和rpad(str,n,pad)	用字符串pad对str最左边或最右边进行填充，直接到长度为n个字符长度
+如：select rpad('my',6,123456)	结果：my1234,一共6位
+      select lpad('my',6,123456)	结果：1234my,一共6位\
+
+repeat(str,n)	将字符串str重复4次
+
+replace('mysql','x','q')	将mysql字符串中的x替换为q
+
+substring(str,x,y)		返回字符串str中第x位置起y个字符串长度的字符
+如：select substring('abcdefg',3,2)	结果：cd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

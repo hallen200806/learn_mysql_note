@@ -1,0 +1,14 @@
+视图不可更新的部分：
+
+聚合函数：
+distinct关键字
+group by子句
+having子句
+union运算符
+from子句中包含多个表
+select 语句中引用了不可更新视图
+只要视图当中的数据不是来自基表，就不能修改
+
+如：create algorithm=merge view emp_salary_view as (select name,salary,AVG(salary) from emp)
+
+这个时候AVG(salary)这一列不能修改

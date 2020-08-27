@@ -1,0 +1,50 @@
+DDL：数据定义语言---查看SQL功能分类图片介绍
+
+
+----------------------对数据库操作：---------------------------
+创建数据库：
+create database my_database;
+-------------------------------------------------
+
+
+---------------------对表操作：----------------------------
+创建表：
+create table my_table(in int,name varchar(32),age varchar(18));
+
+修改表名：
+rename table student to students;
+
+查看表的创建细节：
+show create table students;
+
+修改表的编码：
+alter table students character set utf8;
+
+删除表：
+drop table 表名
+drop table student；
+-------------------------------------------------
+
+
+
+----------------------对表的字段操作：---------------------------
+
+添加列：
+alter table 表名 add 列名 类型
+alter table student add sex varchar(2);		sex是新的列名
+
+修改一个表的字段类型：
+alter table 表名 modify 列名 类型
+alter table student modify age int;
+
+修改表的列名：
+alter table 表名 change 原列名 新列名 类型
+alter table student change sexs sex varchar(32);
+
+删除表的一列：
+alter table 表名 drop 列名
+alter table student drop sex;
+-------------------------------------------------
+
+
+

@@ -1,0 +1,27 @@
+delimiter $$
+
+1.创建存储过程：结构
+
+create procedure show_emp()
+begin
+select * from emp;	这里不会执行，遇到$$时才会执行
+end$$
+
+delimiter ;	改回来
+
+
+2.调用存储过程：在任何时候都能调用存储过程
+call show_emp();
+
+
+3.查看存储过程
+	a.查看所有存储过程：
+		show procedure status;
+	b.查看指定数据库中的存储过程：
+		show procedure status where db='数据库名'
+	c.查看指定存储过程源代码
+		show create procedure 存储过程名
+
+
+4.删除存储过程：
+	drop procedure 名称;

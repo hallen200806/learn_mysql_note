@@ -1,0 +1,31 @@
+1.一对一关系：一夫一妻
+
+2.一对多关系
+	一个人可以拥有多辆汽车
+
+	person表：
+		create table person(id int primary key auto_increment,name varchar(32),age int,gender varchar(2));
+
+	car表：
+		create table car(id int primary key auto_increment,name varchar(50),color varchar(50),pid int,constraint car_person_fk foreign key(pid) references person(id));
+
+注意：一对多，外键在多的那一方
+
+
+
+3.多对多关系
+	学生选课，一个学生可以选修多门课程，每门课程可供多个学生选择
+	一个学生可以有多个老师，一个；老师也可以有多个学生
+
+	teacher表：
+		create table teacher(id int primary key auto_increment,name varchar(50),gender varchar(2));
+	
+	students表：
+		create table student(sid int primary key auto_increment,name varchar(50),gender varchar(50));
+
+	中间表：te_st_rel:
+		create table ta_st_rel(id int primary key auto_increment,tid int,sid int);
+
+	给中间表添加外键约束：
+		老师表关联：alter table ta_st_rel add constraint fk_tid foreign key(tid) references teacher(tid);
+		学生表关联：alter table ta_st_rel add constraint fk_sid foreign key(sid) references student(sid);

@@ -1,0 +1,18 @@
+1.sum函数：求和
+
+求一个字段的和：
+SELECT sum(age) from student;
+
+求多个字段的和：
+SELECT sum(age+score) from student;		这里字段的数据类型没有关系，什么类型都可以，整数和字符串相加时，字符串为0
+
+
+2.avg函数：求平均值
+SELECT avg(age) from student;
+
+3.max函数：求最大值
+select max(age) from student;
+
+
+4.min函数：求最小值
+select min(age) from student;

@@ -1,0 +1,4 @@
+rollback:
+
+start transaction:开启事务
+当遇到一突发情况，撤销执行的SQL语句

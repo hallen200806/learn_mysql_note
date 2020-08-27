@@ -1,0 +1,10 @@
+升序ASC,降序DESC
+
+
+选中表，右键----对象信息   查看建表信息DDL语句
+
+
+排序：
+SELECT * from student order by id desc;	降序
+
+SELECT * from student order by id asc;		升序，默认

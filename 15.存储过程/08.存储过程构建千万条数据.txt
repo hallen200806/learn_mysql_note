@@ -1,0 +1,69 @@
+循环中sql语句，默认是一条一条的插入，每一条数据commit一次，可以设置为一个整体去提交，这样效果大大提高
+
+
+循环外面定义：
+begin
+
+set autocommit=0	这样就不会激动提交sql
+
+repeat
+
+sql语句;
+
+end repeat;
+
+commit;	整体提交
+
+end$$
+
+
+
+例：
+
+-- 08.存储过程构建千万条数据
+
+delimiter $$
+
+create procedure insert_emp(in startNum int,in maxNum int)
+
+begin
+
+declare i int default 0;
+
+set autocommit=0;	-- 不让自动提交
+
+repeat
+
+set i=i+1;
+-- 插入数据
+
+-- rand_str也是个存储过程，用来随机生成字符串，查看07.随机生成字符串文档
+insert into emp values(startNum+i,rand_str(5),floor(10+rand()*30));	
+
+until i =maxNum
+
+end repeat;
+
+commit;	-- 手动提交，将要插入的多条数据作为一个整体提交
+
+end$$
+
+delimiter ;
+
+
+
+调用存储过程：
+
+call insert_emp(100,10000000);		id从10开始，插入一千万条数据
+
+
+
+
+emp表结构信息：
+
+CREATE TABLE `emp` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `age` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

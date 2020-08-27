@@ -1,0 +1,3 @@
+创建索引时，让选择索引方法，索引方法有两种：btree和hash，innodb引擎只能使用btree索引方法
+
+btree索引：

@@ -1,0 +1,46 @@
+一.查询工资高于程咬金的员工
+
+1.先查出程咬金的工资
+select alary from emp where ename='程咬金';
+
+2.再去根据查询出的结果查询出大于该值的员工记录
+
+select ename.salary from emp where salary > (select alary from emp where ename='程咬金');
+
+
+
+二.查询工资高于30号部门所有人的员工信息
+
+1.先查询出30号部门工资最高的员工
+select max(salary) from emp where deptno=30;
+
+2.再查出所有高于这个员工工资的人（有很多部门）
+select ename,salary from emp where salary > 30号部门最高的工资; 
+
+合并：
+select ename,salary from emp where salary >(select max(salary) from emp where deptno=30);
+
+三.查询工作和工资与妲己完全相同的员工信息
+
+1.先查出妲己的工作与工资信息
+select job,salary from emp where ename='妲己';
+
+2.再去和妲己的信息对比，查出满足条件的员工信息
+select ename.salary from emp where (job,salary) in 妲己的job和salary信息；
+
+合并：
+select ename.salary from emp where (job,salary) in (select job,salary from emp where ename='妲己');
+
+
+四.查询有两个直接下属的员工信息
+1.先对直接下属列进行分组，找出两个以上的分组
+select mgr,group_concat(mgr),count(mgr) from emp group by mgr having count(mgr)>=2;
+2.找出满足条件的员工信息
+select ename from emp where empno in 条件
+
+合并：
+select ename from emp where empno in  (select mgr,group_concat(mgr),count(mgr) from emp group by mgr having count(mgr)>=2);
+
+五.查询员工编号为7788的员工名称、员工工资、部门名称、部门地址
+1.多表联查
+select emp.ename,emp.salary,dept.dname,dmpt.addr from emp,dept where emp.deptno =dept.deptno and emp.empno = 7788;

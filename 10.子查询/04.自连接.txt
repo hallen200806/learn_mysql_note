@@ -1,0 +1,10 @@
+需求：
+查出7369员工编号、姓名、经理编号和经理姓名
+select * from emp where empno=(select mgr from emp where empno =7369);	
+
+这样查出来的只是经理的信息，但是查不出来员工的编号和姓名
+
+自连接：
+
+select e1.empno,e1.ename,e2.empno,e2.ename from emp e1,emp e2
+where e1.mgr=e2.empno and e1.empno=7369;

@@ -1,0 +1,6 @@
+左外连接：两表同时满足条件的数据查出来，如果左边表当中有不相同的数据，也把左边表当中的数据查出来
+
+
+比如：学生表和成绩表， 使用内连接可以查出有成绩的学生信息，但是查不出来没有成绩、缺考的学生信息，使用左外连接可以
+
+select * from t_student stu left outer join t_score sco on stu.stuID=sco.stuid;

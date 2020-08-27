@@ -1,0 +1,37 @@
+随机生成字符串存储过程：
+
+
+
+delimiter $$
+
+create function rand_str(n int) returns varchar(255)
+
+begin
+
+-- 声明一个str，一共有52个字母大小写
+declare str varchar(100) default 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+-- 记录当前是第几个
+declare i int default 0;
+
+-- 生成的结果
+declare res_str varchar(255) default '';
+
+while i<n do
+-- 随机生成一个指定个数的字符串
+-- 1+rand()*52	floor(1+rand()*52)
+
+set res_str=concat(res_str,substr(str,floor(1+rand()*52),1));
+
+set i=i+1;
+end while;
+return res_str;
+
+end$$
+
+delimiter ;
+
+
+
+调用存储过程：
+select rand_str(5)		5是字符串长度，可以自己定

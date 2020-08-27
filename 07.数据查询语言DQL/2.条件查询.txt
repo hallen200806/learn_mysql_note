@@ -1,0 +1,12 @@
+
+条件查询：
+条件查询运算符及关键字
+1.    =	!=和<>都是不等于	<     <=     >    >=
+2.在什么范围之内：between... and
+select * from student where age between 18 and 20;	年龄介于18到20之间
+3.查询固定范围值：in(set)	如：in(18,19,20) 查询范围值在18,19,20之内的值
+4.为空:is NULL
+5.不为空:is not NULL
+6.与：and
+7.or：或
+8.非：not

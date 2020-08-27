@@ -1,0 +1,15 @@
+1.创建视图：视图名称不能重复
+
+create view emp_salary_view as (select * from emp where salary > 2000);
+
+2.查询视图:视图也是一张表，和正常表查询一样，只不过是虚拟的表
+
+select * from emp_salary_view where job='经理';
+
+
+3.修改视图：在create后面加：or replace
+create or replace emp_salary_view as (select * from emp where salary > 4000);
+
+4.删除视图：
+
+drop view emp_salary_view;

@@ -1,0 +1,11 @@
+其他常用函数：
+
+database()	返回当前数据库名	select database();
+
+version()		返回当前数据库版本	select version();
+
+user()		返回当前登录用户名	select user();
+
+password(str)	对str进行加密
+
+md5(str)		返回str的md5值		

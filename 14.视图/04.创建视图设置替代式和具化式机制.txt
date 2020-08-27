@@ -1,0 +1,10 @@
+algorithm参数：
+1.merge:处理方式替代式，可以进行更新真实表中的数据；默认的
+2.temptable：具化式，由于数据存储在临时表中，所以不可以进行更新操作
+3.undefind:没有定义algorithm参数，mysql更倾向于选择替换方式，是因为它更加有效
+
+
+with check option:
+更新数据时不能插入或更新不符合视图限制条件的记录
+
+create algorithm=merge view test_view as (select * from emp where salary >2000) with check option;

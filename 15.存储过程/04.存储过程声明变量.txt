@@ -1,0 +1,59 @@
+一.在存储过程中声明一个变量：
+
+使用declare语句：
+
+格式1：declare 变量名 数据类型(大小) default 默认值;
+格式2：declare x,y int default 0;	同时声明两个变量
+
+例：
+
+delimiter $$
+create procedure test()
+declare result varchar(255) default '';
+
+begin
+
+end$$
+
+delimiter ;
+
+
+二.分配变量值
+方式1：要为变量分配一个值，可以使用set语句
+例：
+declare x,y int default 0;
+set x=5；
+
+方式2：使用select into语句将查询的结果分配给一个变量
+例：
+declare avgRes double default 0;
+select avg(salary) into avgRes from emp;
+
+
+三.变量的范围：
+	声明的变量只能在存储过程里使用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

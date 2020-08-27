@@ -1,0 +1,13 @@
+数值函数：
+
+abs(x)	返回x的绝对值	abs(-1)
+
+ceil(x)	向上取整
+
+floor(x)	向下取整
+
+mod(x,y)	返回x/y的模
+
+rand()	返回0-1内容的随机值
+	如：floor(select rand()*10);	0到10的随机整数
+

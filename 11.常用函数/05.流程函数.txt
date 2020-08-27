@@ -1,0 +1,6 @@
+1.if(value,t,f):如果满足条件返回t，否则返回f
+select if((select salary from emp where ename>5000,'经理','员工'))	薪水大于5000的话返回经理，否则返回员工
+
+2，ifnull(value1,value2)	如果value1不为空，返回value1，否则返回value2
+
+3.case when then end(很少用，一般在程序中判断)	

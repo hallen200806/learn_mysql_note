@@ -1,0 +1,50 @@
+创建索引：
+
+create index 索引名称 on table(column[,column]...);	一个列或多个列
+
+create index salary_index on emp(salary);
+
+或者在navicate中添加索引：设计表中有索引选项
+
+
+删除索引：
+drop index 索引名称 on 表名
+
+查看索引：
+show index 索引名称 on 表名;
+
+自动创建索引：
+在表上定义了主键时，会自动创建一个对应的唯一索引
+在表上定义了一个外键时，会自动创建一个普通索引
+
+查看索引是否正在被使用，并且输出其使用的索引的信息：
+explain select from emp where id=101 \G；	-- \G 是以列表的形式展示
+
+
+explain：用来查看索引是否正在被使用，并且输出其使用的索引的信息：
+
+id:第几次出现的
+select_type；所使用的select查询类型，simple表示简单的select，不使用union或子查询，就为简单的select
+table:数据表的表名，他们按被读取的先后顺序排序
+type:指定本数据表和其他数据表之间的关联关系，
+key:实际使用的索引，如primary，主键是默认的自动创建的索引
+possible_keys:
+key_len:显示mysql使用索引的长度(也就是使用的索引个数)，当key为null，索引的长度就是null
+ref:
+rows:
+extra:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

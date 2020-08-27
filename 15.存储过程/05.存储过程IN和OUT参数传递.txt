@@ -1,0 +1,42 @@
+in
+
+out
+
+
+1.in的举例：
+
+根据传入的员工名称，获取对应员工的信息：
+
+delimiter $$
+
+create procedure getName(in ename VARCHAR(255))
+begin
+
+SELECT * from person where name=ename;
+end$$
+
+delimiter ;
+
+
+调用存储过程:
+CALL getName('李四');
+
+
+2.out的举例：
+
+
+根据传入的员工名称，获取对应员工的年龄：
+
+delimiter $$
+
+create procedure getAge(in pname VARCHAR(255),out page int)
+ 
+BEGIN
+select age into page from person where name=pname; 
+END$$
+
+delimiter ;
+
+调用方式：
+CALL getAge('张三',@s);	执行成功提示，不显示结果，这里的s可以是任意字符，下面调用时保持一致即可
+select @s;	这样才是显示结果，完整写法：select @s from DUAL;可以省略

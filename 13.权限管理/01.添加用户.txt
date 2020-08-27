@@ -1,0 +1,12 @@
+sql语句创建用户：
+
+create user '用户名'@'localhost'identified by '密码';
+
+navicate创建用户：
+
+点击连接旁边的用户，然后新建用户，可以配置新建的用户的权限
+
+
+
+sql语句删除用户：
+drop user '用户名'@'localhost';
